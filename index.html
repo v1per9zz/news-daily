@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>每日新闻速览 2026年03月31日</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif; background: #f0f2f5; color: #1a1a2e; min-height: 100vh; }
+        .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 28px 24px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 20px rgba(0,0,0,0.25); }
+        .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 6px; }
+        .site-name { font-size: 20px; font-weight: 700; letter-spacing: 2px; display: flex; align-items: center; gap: 8px; }
+        .update-info { font-size: 12px; opacity: 0.5; text-align: right; line-height: 1.6; }
+        .date-display { font-size: 32px; font-weight: 900; margin-bottom: 4px; letter-spacing: 1px; background: linear-gradient(90deg, #fff, #a8d8ea); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .day-display { font-size: 14px; opacity: 0.6; margin-bottom: 14px; }
+        .tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+        .tab { padding: 7px 15px; border-radius: 22px; background: rgba(255,255,255,0.1); font-size: 13px; cursor: pointer; transition: all 0.25s; border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.8); backdrop-filter: blur(4px); }
+        .tab:hover { background: rgba(255,255,255,0.2); color: white; }
+        .tab.active { background: rgba(255,255,255,0.95); color: #1a1a2e; font-weight: 700; border-color: transparent; }
+        .main { max-width: 920px; margin: 0 auto; padding: 22px 16px 56px; }
+        .category-section { margin-bottom: 30px; display: none; }
+        .category-section:first-of-type { display: block; }
+        .cat-title { font-size: 17px; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 3px solid #e94560; display: inline-block; color: #1a1a2e; }
+        .news-list { display: flex; flex-direction: column; gap: 10px; }
+        .news-item { background: white; border-radius: 12px; padding: 16px 18px; cursor: pointer; transition: all 0.22s; box-shadow: 0 1px 4px rgba(0,0,0,0.07); border: 1px solid #e8e8e8; }
+        .news-item:hover { box-shadow: 0 8px 24px rgba(233,69,96,0.14); transform: translateY(-2px); border-color: #e94560; }
+        .news-title { font-size: 15px; font-weight: 600; color: #1a1a2e; margin-bottom: 7px; line-height: 1.55; }
+        .news-snippet { font-size: 13px; color: #777; line-height: 1.65; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .footer { text-align: center; font-size: 12px; color: #ccc; padding: 20px 0 36px; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+        .category-section:first-of-type .news-item { animation: fadeInUp 0.4s ease both; }
+        .category-section:first-of-type .news-item:nth-child(2) { animation-delay: 0.07s; }
+        .category-section:first-of-type .news-item:nth-child(3) { animation-delay: 0.14s; }
+        .category-section:first-of-type .news-item:nth-child(4) { animation-delay: 0.21s; }
+        .category-section:first-of-type .news-item:nth-child(5) { animation-delay: 0.28s; }
+        .category-section:first-of-type .news-item:nth-child(6) { animation-delay: 0.35s; }
+        @media (max-width: 600px) { .date-display { font-size: 24px; } .site-name { font-size: 17px; } .main { padding: 14px 10px 40px; } .header { padding: 20px 16px 16px; } }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-top">
+            <div class="site-name">📰 每日新闻速览</div>
+            <div class="update-info">自动更新<br>16:09:02</div>
+        </div>
+        <div class="date-display">2026年03月31日</div>
+        <div class="day-display">2026年03月31日 周二</div>
+        <div class="tabs"><span class="tab" data-cat="金融市场" onclick="switchTab(this, '金融市场')">金融·市场</span><span class="tab" data-cat="社会民生" onclick="switchTab(this, '社会民生')">社会·民生</span><span class="tab" data-cat="国际外交" onclick="switchTab(this, '国际外交')">国际·外交</span><span class="tab" data-cat="文艺娱乐" onclick="switchTab(this, '文艺娱乐')">文艺·娱乐</span>
+        </div>
+    </div>
+    <div class="main">
+        <div class="category-section" id="cat-金融市场">
+            <h2 class="cat-title">💰 金融·市场</h2>
+            <div class="news-list">
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswpmw5667911.shtml', '_blank')">
+                <div class="news-title">外资3月份净抛售233亿美元韩国股票，创历史纪录</div>
+                <div class="news-snippet">市场数据显示，受持续不断的中东冲突加剧避险情绪的影响，外国投资者本月净卖出韩国股票的金额创下新的月度纪录。 韩国交易所（KRX）周二公布的数据显示...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicy5798408.shtml', '_blank')">
+                <div class="news-title">美军若登陆哈尔克岛 伊朗或有四种回应方式</div>
+                <div class="news-snippet">美国在中东增兵，引发外界猜测其可能对伊朗本土发动地面攻击，焦点之一是伊朗关键石油枢纽哈尔克岛。 但如果美军真正登陆伊朗领土，极可能导致冲突重大升级...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswiea2168995.shtml', '_blank')">
+                <div class="news-title">韩国芯片制造商的氦气库存据悉至少可维持至6月份</div>
+                <div class="news-snippet">两名消息人士称，韩国的氦气库存至少可以维持到6月份，而韩国产业通商资源部长官排除了上半年供应中断的可能性，从而缓解了人们对伊朗冲突可能对芯片制造关键气体氦气供应...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/hkstock/hkgg/2026-03-31/doc-inhswiea2166810.shtml', '_blank')">
+                <div class="news-title">高盛：降申洲国际目标价至57港元 维持“买入”评级</div>
+                <div class="news-snippet">高盛发布研报称，申洲国际（02313）去年下半年纯利较该行预期低11%，主要受毛利率及经营利润率低于预期，以及外汇亏损高于预期拖累。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/hkstock/hkgg/2026-03-31/doc-inhswiea2166349.shtml', '_blank')">
+                <div class="news-title">花旗：降申洲国际目标价至75港元 评级“买入” 建议逢低买进</div>
+                <div class="news-snippet">花旗发布研报称，申洲国际（02313）去年纯利同比跌6.7%至58.25亿元人民币，核心利润同比升4.9%至60.8亿元人民币，逊市场及该行预期分别4%及6%。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/money/future/fmnews/2026-03-31/doc-inhswicu3367680.shtml', '_blank')">
+                <div class="news-title">光大期货0331热点追踪：基本面与宏观面共振，纯碱延续弱势下行</div>
+                <div class="news-snippet">周二早盘前，据美国《华尔街日报》援引美政府官员的话报道，美国总统特朗普告诉其助手，即使霍尔木兹海峡仍关闭，他也愿意结束美国对伊朗的军事行动。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/hkstock/hkgg/2026-03-31/doc-inhswicu3367286.shtml', '_blank')">
+                <div class="news-title">中银国际：维持中国石油股份“买入”评级 目标价上调至12.12港元</div>
+                <div class="news-snippet">中银国际发布研报称，维持中国石油股份（00857）“买入”评级，将2026年派息比率假设由45%上调至50%，H股目标价由11.62港元上调至12.12港元，中石油（601857...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/hkstock/hkgg/2026-03-31/doc-inhswicy5790939.shtml', '_blank')">
+                <div class="news-title">晨星：维持华润置地公允价值预测43港元 房地产强势投资抵消房地产开发下行</div>
+                <div class="news-snippet">晨星发布研报称，维持无护城河的华润置地（01109）公允价值预测43港元，尽管将该行2026-2028年的营业利润预期下调1-3%，但对长期盈利的假设基本上保持不变。</div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section" id="cat-社会民生">
+            <h2 class="cat-title">🏛️ 社会·民生</h2>
+            <div class="news-list">
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tob/2026-03-31/doc-inhswiea2130657.shtml', '_blank')">
+                <div class="news-title">贝壳省心租上海在管房源突破10万套</div>
+                <div class="news-snippet">新浪科技讯 3月31日下午消息，贝壳官方披露数据，省心租在沪在管房源量突破10万套关口，成为上海分散式机构托管领域率先迈入“十万级”体量的品牌。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tob/2026-03-31/doc-inhswicw8981799.shtml', '_blank')">
+                <div class="news-title">上海区域切换为平台模式？贝壳彭永东回应“坚持直营”</div>
+                <div class="news-snippet">新浪科技讯 3月31日下午消息，近日，贝壳集团联合创始人、董事长兼CEO彭永东现身上海并召开工作会议。针对网上猜测的上海区域是否将切换为平台模式...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tob/2026-03-31/doc-inhswicw8980908.shtml', '_blank')">
+                <div class="news-title">千问测试“引证”功能，支持对AI回答进行信源核查</div>
+                <div class="news-snippet">新浪科技讯 3月31日下午消息，近日，千问上线了一项名为“引证”的新功能，可对涉及新闻时事、政策动态等需引用外部信源的回答内容进行二次事实核查。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tech/discovery/2026-03-31/doc-inhswicy5738840.shtml', '_blank')">
+                <div class="news-title">华为Pura 90系列定档4月：三剑齐发 Ultra版缺席</div>
+                <div class="news-snippet">快科技3月31日消息，根据最新爆料显示，华为Pura 90系列已确定将于4月下旬正式发布。与之同步亮相的还有华为备受期待的阔折叠屏新机...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tech/2026-03-31/doc-inhswavy9068531.shtml', '_blank')">
+                <div class="news-title">联想集团宣布与大卫·贝克汉姆达成全球合作</div>
+                <div class="news-snippet">新浪科技讯 3月31日下午消息，联想集团官宣与大卫·贝克汉姆达成全球合作。其还将现身联想集团于五月推出的全球营销活动，该活动将于2026年FIFA世界杯开赛前一个月正式上线...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tech/2026-03-31/doc-inhswavy9065705.shtml', '_blank')">
+                <div class="news-title">面向一人公司和初创团队 美图AI开放平台发布Meitu CLI</div>
+                <div class="news-snippet">新浪科技讯 3月31日午间消息，美图AI开放平台近日发布Meitu CLI工具。首批美图AI Skills目前已登陆ClawHub并全面接入OpenClaw龙虾生态，并开放8种场景AI影像能力...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tech/2026-03-31/doc-inhsvwpy3446409.shtml', '_blank')">
+                <div class="news-title">名创优品寇维宣：锚定全球领先的IP运营平台，以乐园系大店布局全球旅游零售</div>
+                <div class="news-snippet">新浪科技讯 3月31日上午消息，近日，在2026中免全球合作伙伴大会圆桌论坛上，名创优品集团全球副总裁兼首席渠道发展官寇维宣介绍了品牌如何以MINISO...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/tech/2026-03-31/doc-inhsvwqa9105079.shtml', '_blank')">
+                <div class="news-title">联想对标Mac mini推两款“养虾”专用终端</div>
+                <div class="news-snippet">新浪科技讯 3月31日上午消息，联想集团正式发布YOGA AI Mini与Think AI Tiny两款AI原生智能终端，其中面向个人消费市场的YOGA AI...</div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section" id="cat-国际外交">
+            <h2 class="cat-title">🌏 国际·外交</h2>
+            <div class="news-list">
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2025-10-18/doc-infuhrzs7824610.shtml', '_blank')">
+                <div class="news-title">集体拒签“最后通牒”，大批媒体撤离五角大楼</div>
+                <div class="news-snippet">美国“战争部长”皮特·赫格塞斯9月发布一份针对驻五角大楼媒体记者新规定的备忘录，备忘录规定驻五角大楼记者不收集、不报道“未经批准发布的消息”...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2025-04-22/doc-inetyprm5804047.shtml', '_blank')">
+                <div class="news-title">哈萨克斯坦一名副市长遭枪击</div>
+                <div class="news-snippet">据哈通社报道，哈萨克斯坦第三大城市奇姆肯特市21日晚发生枪击事件，造成该市副市长别尔杰诺夫受伤。 报道说，当地时间20时30分左右...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2025-04-10/doc-inesrwyy3360127.shtml', '_blank')">
+                <div class="news-title">2025中法文化之春新闻发布会成功举办，开启艺术交流新旅程</div>
+                <div class="news-snippet">2025年4月8日，第十九届“中法文化之春”新闻发布会在北京成功举行，标志着这一中法文化交流盛事的正式启幕。法国驻华大使白玉堂、法国驻华大使馆公使衔参赞裴国良出席发布会...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2024-08-20/doc-inckfkfw9188723.shtml', '_blank')">
+                <div class="news-title">瑞士航空延长该国往返特拉维夫和贝鲁特航班停飞期限</div>
+                <div class="news-snippet">当地时间19日，瑞士航空发表声明，宣布延长往返以色列特拉维夫和黎巴嫩贝鲁特航班的停飞期限至8月26日。 瑞士航空表示根据最新的安全局势分析而做出此决定...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2024-07-04/doc-incawzzt6264898.shtml', '_blank')">
+                <div class="news-title">土耳其称摧毁伊拉克北部37个库尔德工人党目标</div>
+                <div class="news-snippet">土耳其国防部当地时间7月3日夜间发布声明，土安全部队当日对伊拉克北部梅蒂纳、加拉、哈库克、坎迪尔和阿索斯地区发起空袭，打击库尔德工人党藏匿的洞穴、避难所、庇护所...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2024-07-03/doc-incausuy0184104.shtml', '_blank')">
+                <div class="news-title">土耳其逮捕11名“伊斯兰国”相关嫌疑人</div>
+                <div class="news-snippet">据土耳其广播电视总台当地时间7月2日报道，土耳其警方当天在西部伊兹密尔省采取行动，逮捕11名与极端组织“伊斯兰国”有关联的嫌疑人。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/w/2024-06-28/doc-incafpmy6457194.shtml', '_blank')">
+                <div class="news-title">南共市及联系国发表公报支持玻利维亚总统及政府</div>
+                <div class="news-snippet">当地时间6月27日，南方共同市场（南共市）及联系国就玻利维亚局势发布公报，表示对玻利维亚总统阿尔塞及政府进行声援和支持。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://news.sina.com.cn/o/2024-06-27/doc-incafawe6648210.shtml', '_blank')">
+                <div class="news-title">丰田汽车5月全球销量超88万辆，同比下降2%</div>
+                <div class="news-snippet">新京报贝壳财经讯（记者王琳琳）6月27日，新京报贝壳财经记者从丰田汽车官方获悉，今年5月，丰田汽车公司（含子公司大发汽车和日野汽车）产量为900195辆，同比下降5...</div>
+            </div>
+            </div>
+        </div>
+        <div class="category-section" id="cat-文艺娱乐">
+            <h2 class="cat-title">🎨 文艺·娱乐</h2>
+            <div class="news-list">
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswpmw5667911.shtml', '_blank')">
+                <div class="news-title">外资3月份净抛售233亿美元韩国股票，创历史纪录</div>
+                <div class="news-snippet">市场数据显示，受持续不断的中东冲突加剧避险情绪的影响，外国投资者本月净卖出韩国股票的金额创下新的月度纪录。 韩国交易所（KRX）周二公布的数据显示...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicy5798408.shtml', '_blank')">
+                <div class="news-title">美军若登陆哈尔克岛 伊朗或有四种回应方式</div>
+                <div class="news-snippet">美国在中东增兵，引发外界猜测其可能对伊朗本土发动地面攻击，焦点之一是伊朗关键石油枢纽哈尔克岛。 但如果美军真正登陆伊朗领土，极可能导致冲突重大升级...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswiea2168995.shtml', '_blank')">
+                <div class="news-title">韩国芯片制造商的氦气库存据悉至少可维持至6月份</div>
+                <div class="news-snippet">两名消息人士称，韩国的氦气库存至少可以维持到6月份，而韩国产业通商资源部长官排除了上半年供应中断的可能性，从而缓解了人们对伊朗冲突可能对芯片制造关键气体氦气供应...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicu3357006.shtml', '_blank')">
+                <div class="news-title">韩国提出170亿美元追加预算，以缓冲伊朗冲突引发的能源成本上涨</div>
+                <div class="news-snippet">周二，韩国提出一项26.2万亿韩元（约合171亿美元）的补充预算，旨在缓解能源价格上涨给家庭和企业带来的压力。中东冲突已造成能源供应紧张。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicy5769700.shtml', '_blank')">
+                <div class="news-title">韩国最大航司将进入紧急管理模式，以应对燃油价格飙升</div>
+                <div class="news-snippet">据业内人士周二透露，韩国旗舰航空公司大韩航空本周将进入紧急管理模式，以应对不断上涨的燃油成本和其他日益恶化的外部环境。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicy5760903.shtml', '_blank')">
+                <div class="news-title">韩国央行官员：若羊群效应显著 韩国央行将采取行动稳定外汇市场</div>
+                <div class="news-snippet">韩国央行国际局长Yoon Kyung-soo周二表示，韩国央行正密切关注外汇市场，如果出现明显的羊群效应或单边走势，将采取措施稳定市场。</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/wm/2026-03-31/doc-inhswiea2123248.shtml', '_blank')">
+                <div class="news-title">午后，跳水！伊朗局势，最新冲击！韩国政府，拟出手</div>
+                <div class="news-snippet">伊朗局势对全球股市的冲击仍在持续！ 今日午后，韩国股市再度跳水，跌幅超过4%。截至收盘，韩国KOSPI指数下跌4.26%，报5052.46点，3月累计下跌19.1%...</div>
+            </div>
+            <div class="news-item" onclick="window.open('https://finance.sina.com.cn/stock/usstock/c/2026-03-31/doc-inhswicy5749730.shtml', '_blank')">
+                <div class="news-title">受中东冲突影响，越南Vingroup拟放弃建设液化天然气发电厂计划</div>
+                <div class="news-snippet">一份文件显示，由于伊朗冲突加剧了液化天然气价格过高的风险，越南最大上市公司Vingroup已告知越南政府，该公司希望放弃在越南建设最大的液化天然气发电厂的计划...</div>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">内容综合自公开 RSS 订阅源 · 点击卡片跳转原文</div>
+    <script>
+        function switchTab(el, cat) {
+            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+            el.classList.add('active');
+            document.querySelectorAll('.category-section').forEach(s => s.style.display = 'none');
+            const section = document.getElementById('cat-' + cat);
+            if (section) section.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
