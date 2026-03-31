@@ -1,7 +1,7 @@
 # 姣忔棩鏂伴椈閫熻
 
 鑷姩鎶撳彇姣忔棩閲嶅ぇ鏂伴椈锛屾瘡澶?GitHub Actions 鑷姩鏇存柊銆?
-## 馃寪 缃戠珯鍦板潃
+## 缃戠珯鍦板潃
 
 https://v1per9zz.github.io/news-daily/
 
